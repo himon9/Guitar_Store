@@ -13,7 +13,7 @@ const Footer = () => {
         <footer className="bck_b_dark">
             <div className="container">
                 <div className="logo">
-                    WAVES
+                    SARKAR'S
                 </div>
                 { site && site.vars ? 
                 <div className="wrapper">
