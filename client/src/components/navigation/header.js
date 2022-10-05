@@ -10,7 +10,7 @@ const Header = ({users, signOutUser}) => {
             <div className="container">
                 <div className="left">
                     <div className="logo">
-                        WAVES
+                        SARKAR'S
                     </div>
                 </div>
                 <div className="right">
