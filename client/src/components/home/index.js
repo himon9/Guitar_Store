@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Featured from './featured';
 import SlimPromotion from 'utils/promotions/slim.block';
 import Loader from 'utils/loader';
@@ -18,16 +18,11 @@ const slimPromotion = {
 };
 
 const verify = async ()=>{
-    axios.get(window.location.href) 
+    const user=await axios.get(window.location.href) 
 }
-//verify()
-
-
-//window.location.reload();
-
+verify()
 
 const Home = () => {
-    
     const { bySold, byDate } = useSelector(state => state.products)
     const dispatch = useDispatch();
 
@@ -45,10 +40,7 @@ const Home = () => {
     return(
         
         <div>
-            <h style={{
-                
-                opacity: 0
-            }}>window.location.reload()</h>
+            
             <Featured/>
             { bySold ?
                 <CardBlock
