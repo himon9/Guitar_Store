@@ -18,14 +18,13 @@ const slimPromotion = {
 };
 
 const verify = async ()=>{
-    await axios.get(window.location.href)
+    await axios.get(window.location.href)     
 }
 verify()
 
-const refreshPage = ()=>{
-     window.location.reload();
-}
-refreshPage()
+
+
+
 
 const Home = () => {
     
@@ -45,7 +44,7 @@ const Home = () => {
     return(
         
         <div>
-            
+            window.location.reload();
             <Featured/>
             { bySold ?
                 <CardBlock
