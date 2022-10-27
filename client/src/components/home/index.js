@@ -18,15 +18,19 @@ const slimPromotion = {
 };
 
 const verify = async ()=>{
-    const user=await axios.get(window.location.href)
+    await axios.get(window.location.href)
 }
 verify()
 
+const refreshPage = ()=>{
+     window.location.reload();
+}
+
+
 const Home = () => {
+    
     const { bySold, byDate } = useSelector(state => state.products)
     const dispatch = useDispatch();
-
-
 
     useEffect(()=>{
         dispatch(productsBySort({
@@ -39,9 +43,10 @@ const Home = () => {
     },[dispatch])
 
     return(
+        
         <div>
+            
             <Featured/>
-
             { bySold ?
                 <CardBlock
                     items={bySold}
