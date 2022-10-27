@@ -18,12 +18,12 @@ const slimPromotion = {
 };
 
 const verify = async ()=>{
-    await axios.get(window.location.href)     
+    axios.get(window.location.href) 
 }
-verify()
+//verify()
 
 
-
+//window.location.reload();
 
 
 const Home = () => {
@@ -32,6 +32,7 @@ const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
+       
         dispatch(productsBySort({
             limit:4,sortBy:'itemSold',order:'desc',where:'bySold'
         }));
@@ -44,7 +45,10 @@ const Home = () => {
     return(
         
         <div>
-            window.location.reload();
+            <h style={{
+                
+                opacity: 0
+            }}>window.location.reload()</h>
             <Featured/>
             { bySold ?
                 <CardBlock
