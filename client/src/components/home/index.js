@@ -25,7 +25,7 @@ verify()
 const refreshPage = ()=>{
      window.location.reload();
 }
-
+refreshPage()
 
 const Home = () => {
     
