@@ -9,8 +9,8 @@ router.route('/profile')
 .patch(auth('updateOwn','profile'),usersController.updateProfile)
 
 router.patch('/email',auth('updateOwn','profile'), usersController.updateUserEmail);
-router.get('/verify', usersController.verifyAccount)
-/// 
+router.get('/verify', usersController.verifyAccount)//ok line...chekced with postman by sending get request
+///
 
 
 module.exports = router;

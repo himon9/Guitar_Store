@@ -41,9 +41,11 @@ const usersController = {
     },
     async verifyAccount(req,res, next){
         try {
+            //From postman if get request is send then user is being verified
+            //but from client side this function is not being triggered
             const token = await userService.validateToken(req.query.validation);
             const user = await userService.findUserById(token.sub);
-
+            //alert("Entering into verifyAccount section")
             if(!user) throw new ApiError(httpStatus.NOT_FOUND,'User not found');
             if(user.verified) throw new ApiError(httpStatus.BAD_REQUEST,'Already verified')
 

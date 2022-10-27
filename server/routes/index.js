@@ -32,6 +32,7 @@ const routesIndex = [
         path:'/transaction',
         route:transactionRoute
     }
+
 ]
 
 routesIndex.forEach((route)=>{

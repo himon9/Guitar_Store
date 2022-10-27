@@ -32,8 +32,7 @@ const registerEmail = async(userEmail,user) => {
                     button:{
                         color:'#1a73e8',
                         text: 'Validate your account',
-                        link: `${process.env.SITE_DOMAIN}verification?t=${emailToken}`,
-                        
+                        link: `${process.env.SITE_DOMAIN}api/users/verify?validation=${emailToken}`,
                     }
                 },
                 outro: 'Need help, or have questions? Just reply to this email, we\'d love to help.'

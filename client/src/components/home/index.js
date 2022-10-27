@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productsBySort } from 'store/actions/product.actions';
 
 import CardBlock from 'utils/products/card.blocks';
+import axios from 'axios';
 
 const slimPromotion = {
     img:'/images/featured/featured_home_3.jpg',
@@ -16,9 +17,15 @@ const slimPromotion = {
     linkTo:'/shop'
 };
 
+const verify = async ()=>{
+    const user=await axios.get(window.location.href)
+}
+verify()
+
 const Home = () => {
     const { bySold, byDate } = useSelector(state => state.products)
     const dispatch = useDispatch();
+
 
 
     useEffect(()=>{
@@ -30,7 +37,6 @@ const Home = () => {
             limit:4,sortBy:'date',order:'desc',where:'byDate'
         }));
     },[dispatch])
-
 
     return(
         <div>
